@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Letterhead Template</title>
+<style>
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    body {
+        margin: 0;
+        padding: 20px;
+        background-color: #525659;
+        display: flex;
+        justify-content: center;
+        font-family: 'Arial', sans-serif;
+    }
+    .page {
+        width: 210mm;
+        height: 297mm;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        position: relative;
+        padding: 15mm 20mm 20mm 20mm;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .header {
+        position: relative;
+        height: 35mm;
+        width: 100%;
+        margin-bottom: 5mm;
+    }
+    .header-logo-section {
+        position: absolute;
+        top: -35px;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo-placeholder {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        border: 2px dashed #923a5e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #923a5e;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .header-title {
+        color: #923a5e;
+        font-size: 16px;
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .header-left-text {
+        position: absolute;
+        bottom: 12px;
+        left: 0;
+        font-size: 12px;
+        font-weight: bold;
+        color: #333;
+        padding: 4px 0px;
+        z-index: 1;
+    }
+    .header-line {
+        position: absolute;
+        bottom: 0;
+        left: -20mm;
+        width: calc(100% + 40mm);
+        height: 40px;
+    }
+    .header-line svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .meta-info {
+        margin-top: 15px;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .meta-row {
+        display: flex;
+        align-items: flex-end;
+    }
+    .meta-label {
+        font-size: 11px;
+        margin-right: 0;
+        width: 30px;
+    }
+    .meta-line {
+        border-bottom: 0.5px solid #555;
+        width: 180px;
+        display: inline-block;
+        height: 14px;
+    }
+    
+    .footer-line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background-color: #923a5e;
+    }
+    
+    .footer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 40%;
+        height: 22mm;
+        background-color: #923a5e;
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: white;
+        font-size: 11px;
+        text-align: center;
+        padding-left: 8%;
+        padding-right: 10px;
+    }
+    
+    @media print {
+        body {
+            background-color: white;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .page {
+            box-shadow: none;
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 15mm 20mm 20mm 20mm;
+            overflow: hidden;
+        }
+        .no-print {
+            display: none !important;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="no-print" style="text-align: center; padding: 15px; background-color: #333; margin-bottom: 20px;">
+    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+        <button onclick="window.print()" style="padding: 10px 25px; font-size: 16px; font-weight: bold; background-color: #923a5e; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            🖨️ Print / Download as PDF
+        </button>
+        <button onclick="downloadImage()" style="padding: 10px 25px; font-size: 16px; font-weight: bold; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            🖼️ Download as Image
+        </button>
+    </div>
+    <p style="margin: 8px 0 0 0; font-size: 13px; color: #ddd;">(PDF download ke liye "Save as PDF" aur "Background graphics" ON rakhein)</p>
+</div>
+
+<div class="page">
+    <div class="header">
+        <div class="header-logo-section">
+            <img src="University_logo-01.png" alt="University Logo" style="max-height: 150px; width: auto;">
+        </div>
+        
+        <div class="header-left-text">
+            OFFICE OF THE REGISTRAR
+        </div>
+        
+        <div class="header-line">
+            <svg viewBox="0 0 1000 40" preserveAspectRatio="none">
+                <!-- Neeche wali seedhi line -->
+                <path d="M 0,37 L 1000,37" fill="none" stroke="#923a5e" stroke-width="2.5"/>
+                <!-- Upar wali line jo text ke upar se aakar neeche touch hoti hai -->
+                <path d="M 0,2 L 450,2 L 520,37" fill="none" stroke="#923a5e" stroke-width="2.5"/>
+            </svg>
+        </div>
+    </div>
+    
+    <div class="meta-info">
+        <div class="meta-row">
+            <span class="meta-label">Ref.:</span>
+            <span class="meta-line" style="text-align: center; font-weight: bold;">SU/SA/26/26270</span>
+        </div>
+        <div class="meta-row" style="margin-top: 5px;">
+            <span class="meta-label">Date:</span>
+            <span class="meta-line" style="text-align: center; font-weight: bold;">August 6, 2026</span>
+        </div>
+    </div>
+    
+    <div class="content" style="padding: 10px 30px;">
+        <h2 style="text-align: center; text-decoration: underline; margin-top: 40px; margin-bottom: 35px; font-family: 'Times New Roman', Times, serif; font-size: 22px;">English Proficiency Certificate</h2>
+        
+        <p style="text-align: justify; font-size: 15px; line-height: 2; font-family: 'Times New Roman', Times, serif;">
+            This is to certify that <strong>Mr. Hammad Aslam</strong> S/O <strong>Mr. Muhammad Aslam</strong> was a bonafide student of <strong>BS</strong> in <strong>Computer Science</strong> in the session <strong>2020-2024</strong> under <strong>Roll No. BCSM-F20-259</strong>. It is also certified that medium of instruction in this university is English and the student stated above has been evaluated in the same language.
+        </p>
+        
+        <p style="text-align: left; font-size: 15px; font-family: 'Times New Roman', Times, serif; margin-top: 25px;">
+            His level of proficiency is very good.
+        </p>
+        
+        <div style="margin-top: 30px; text-align: left;">
+            <img src="ChatGPT Image Aug 6, 2026, 12_16_20 PM.png" alt="Assistant Registrar Signature" style="height: 140px;">
+        </div>
+    </div>
+    
+    <div class="footer-line"></div>
+    <div class="footer">
+        17-KM, Main Raiwind Road, Lahore.<br>
+        UAN: 042 111 00 00 78 | www.superior.edu.pk
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+<script>
+    function downloadImage() {
+        const element = document.querySelector('.page');
+        
+        // Remove shadow temporarily for a clean image
+        const originalShadow = element.style.boxShadow;
+        element.style.boxShadow = 'none';
+
+        const scale = 2;
+        domtoimage.toPng(element, {
+            quality: 1,
+            width: element.clientWidth * scale,
+            height: element.clientHeight * scale,
+            style: {
+                transform: 'scale(' + scale + ')',
+                transformOrigin: 'top left'
+            }
+        }).then(function (dataUrl) {
+            element.style.boxShadow = originalShadow; // Restore shadow
+            const link = document.createElement('a');
+            link.download = 'Certificate.png';
+            link.href = dataUrl;
+            link.click();
+        }).catch(function(error) {
+            console.error('Image download error:', error);
+            element.style.boxShadow = originalShadow; // Restore shadow
+        });
+    }
+</script>
+</body>
+</html>
